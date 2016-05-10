@@ -1,0 +1,477 @@
+@charset "utf-8";
+*{
+	margin:0px;
+	padding:0px;
+	outline:none;
+}
+
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+	list-style:none;
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border: none;
+}
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a, a:link, a:hover, a:active, a:focus, a:visited { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+	text-decoration: none;
+	color: #000;	
+}
+h1,h2,h3,h4,h5{
+	margin:0px;
+	padding:0px;
+}
+
+/*HTML 5 support - Sets new HTML 5 tags to display:block so browsers know how to render the tags properly. */
+header, nav, section, footer, aside, article, figure {
+	display: block;
+}
+
+/*LOADING*/
+#loading{ position:fixed; width: 100%; height: 50px; line-height:50px; z-index: 99999; top:300px; left:0px; text-align:center; }
+
+/*TRANSITION*/
+.transition_02s{ transition:0.2s; -moz-transition:0.2s; -ms-transition:0.2s; -o-transition:0.2s; -webkit-transition:0.2s; }
+.transition_03s{ transition:0.3s; -moz-transition:0.3s; -ms-transition:0.3s; -o-transition:0.3s; -webkit-transition:0.3s; }
+.transition_04s{ transition:0.4s; -moz-transition:0.4s; -ms-transition:0.4s; -o-transition:0.4s; -webkit-transition:0.4s; }
+.transition_05s{ transition:0.5s; -moz-transition:0.5s; -ms-transition:0.5s; -o-transition:0.5s; -webkit-transition:0.5s; }
+.transition_06s{ transition:0.6s; -moz-transition:0.6s; -ms-transition:0.6s; -o-transition:0.6s; -webkit-transition:0.6s; }
+.transition_07s{ transition:0.7s; -moz-transition:0.7s; -ms-transition:0.7s; -o-transition:0.7s; -webkit-transition:0.7s; }
+.transition_08s{ transition:0.8s; -moz-transition:0.8s; -ms-transition:0.8s; -o-transition:0.8s; -webkit-transition:0.8s; }
+.transition_09s{ transition:0.9s; -moz-transition:0.9s; -ms-transition:0.9s; -o-transition:0.9s; -webkit-transition:0.9s; }
+.transition_10s{ transition:1s; -moz-transition:1s; -ms-transition:1s; -o-transition:1s; -webkit-transition:1s; }
+
+/*BORDER-RADIUS*/
+.border_radius_5px{ border-radius:5px; -moz-border-radius:5px; -ms-border-radius:5px; -o-border-radius:5px; -webkit-border-radius:5px; }
+.border_radius_10px{ border-radius:10px; -moz-border-radius:10px; -ms-border-radius:10px; -o-border-radius:10px; -webkit-border-radius:10px; }
+.border_radius_15px{ border-radius:15px; -moz-border-radius:15px; -ms-border-radius:15px; -o-border-radius:15px; -webkit-border-radius:15px; }
+.border_radius_20px{ border-radius:20px; -moz-border-radius:20px; -ms-border-radius:20px; -o-border-radius:20px; -webkit-border-radius:20px; }
+
+/*TRANSFORM - SCALE*/
+.transform_scale_11:hover{ transform:scale(1.1); -moz-transform:scale(1.1); -ms-transform:scale(1.1); -o-transform:scale(1.1); -webkit-transform:scale(1.1); }
+.transform_scale_12:hover{ transform:scale(1.2); -moz-transform:scale(1.2); -ms-transform:scale(1.2); -o-transform:scale(1.2); -webkit-transform:scale(1.2); }
+.transform_scale_13:hover{ transform:scale(1.3); -moz-transform:scale(1.3); -ms-transform:scale(1.3); -o-transform:scale(1.3); -webkit-transform:scale(1.3); }
+.transform_scale_14:hover{ transform:scale(1.4); -moz-transform:scale(1.4); -ms-transform:scale(1.4); -o-transform:scale(1.4); -webkit-transform:scale(1.4); }
+.transform_scale_15:hover{ transform:scale(1.5); -moz-transform:scale(1.5); -ms-transform:scale(1.5); -o-transform:scale(1.5); -webkit-transform:scale(1.5); }
+
+/*TRANSFORM - ROTATE*/
+.transform_rotate_45,.transform_rotate_90,.transform_rotate_180,.transform_rotate_360{ transform:rotate(0); -moz-transform:rotate(0); -ms-transform:rotate(0); -o-transform:rotate(0); -webkit-transform:rotate(0); }
+.transform_rotate_45{ transform:rotate(45deg); -moz-transform:rotate(45deg); -ms-transform:rotate(45deg); -o-transform:rotate(45deg); -webkit-transform:rotate(45deg); }
+.transform_rotate_90{ transform:rotate(90deg); -moz-transform:rotate(90deg); -ms-transform:rotate(90deg); -o-transform:rotate(90deg); -webkit-transform:rotate(90deg); }
+.transform_rotate_180{ transform:rotate(180deg); -moz-transform:rotate(180deg); -ms-transform:rotate(180deg); -o-transform:rotate(180deg); -webkit-transform:rotate(180deg); }
+.transform_rotate_360{ transform:rotate(360deg); -moz-transform:rotate(360deg); -ms-transform:rotate(360deg); -o-transform:rotate(360deg); -webkit-transform:rotate(360deg); }
+
+
+/*FILTER*/
+.filter_gray{ -moz-filter: grayscale(0%);	-ms-filter: grayscale(0%); -o-filter: grayscale(0%); -webkit-filter: grayscale(0%); filter: none;}
+.filter_gray:hover{  filter: gray;	-moz-filter: grayscale(100%); -ms-filter: grayscale(100%); -o-filter: grayscale(100%);	-webkit-filter: grayscale(100%); }
+
+
+/*PADDING*/
+.padding_10px:hover{ padding-left:10px; }
+.padding_15px:hover{ padding-left:15px; }
+.padding_20px:hover{ padding-left:20px; }
+
+/*Quay tron*/
+.quaytron:hover{    transition: 1s;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);}
+/* Hình ảnh */
+.hinhanh_info{
+width: 22.3%;
+    float: left;
+    margin-bottom: 17px;
+    padding: 0.5%;
+    height: auto;
+    margin-right: 2%;
+    border: 1px solid #fe65b6;
+    transition: 0.7s;
+    -moz-transition: 0.7s;
+    -ms-transition: 0.7s;
+    -o-transition: 0.7s;
+    -webkit-transition: 0.7s;
+    text-align: center;
+}
+.hinhanh_info1{margin-right:0px}
+.hinhanh_info:hover{
+	border:1px solid #333;	
+}
+.hinhanh_info hr{
+	border:1px solid #06F; margin:5px auto;	
+}
+.hinhanh_info:hover hr{
+	border:1px solid #C00;
+}
+.hinhanh_info_img{
+	width:100%;
+	height:auto;
+	display:block;	
+}
+.hinhanh_info_ten{	
+	padding:0px 10px;
+	font-size:14px;
+	font-weight:500;
+}
+.hinhanh_info_ten:hover{
+	color:#F00;
+}
+/* End Hình ảnh */
+
+
+/* SẢN PHẨM */
+.kc_sp{
+	width:100%;
+	height:25px;
+	float:left;
+}
+.sp_info{
+	width:220px;
+	float:left;
+	margin-right:78px;
+	position:relative;
+	text-align:center;
+    font-family: 'UTM_Avo';
+}
+.sp_img{
+	width:220px;
+	height:220px;
+	float:left;
+	position:relative;
+	overflow:hidden;
+}
+.sp_img span{
+	width:0px;
+	height:0px;
+	overflow:hidden;	
+	position:absolute;
+	top:50%;
+	left:50%;
+	z-index:10;	
+}
+.sp_img:hover span{
+	top:0px;
+	left:0px;
+	display:block;
+	width:220px;
+	height:220px;
+	background:url(../images/xem_sp.png) center center no-repeat;
+	background-color:#999;
+	background-color:rgba(0,0,0,0.6);
+}
+.sp_img img{
+	width:220px;
+	height:220px;
+	border:none;		
+}
+.sp_img:hover img{ transform:scale(1.2); -moz-transform:scale(1.2); -ms-transform:scale(1.2); -o-transform:scale(1.2); -webkit-transform:scale(1.2); }
+
+.sp_img_bottom{
+	background:url(../images/sp_info_bottom.png) top center no-repeat;
+	height:7px;
+	clear:both;
+}
+.sp_info .sp_ten{
+	clear:both;
+	font-size:15px;
+	font-weight:bold;
+	color:#000;
+	padding:13px 0px 8px 0px;
+	display:block;	
+}
+.sp_info:hover .sp_ten{
+	color:#F00;	
+}
+.sp_giaban{
+    font-size:15px;
+	font-weight:500;
+	color:#F00;    
+}
+.chitiet_sp{
+	background:url(../images/xemchitiet.png) repeat-x;
+	height:23px;
+	line-height:23px;
+	padding:0px 20px;
+	float:left;
+	font-weight: bold;
+	margin-left: 53px;
+	color:#333;
+	cursor:pointer;
+}
+.chitiet_sp:hover{
+	text-decoration:underline;
+}
+/* END SẢN PHẨM */
+
+
+
+
+
+
+
+.clear{ clear:both; }
+.clear_left{ clear:left; }
+.clear_right{ clear:right; }
+
+
+/*TIN NOI BAT*/	
+.tin_info{
+	position:relative;		
+	padding:21px 0px; 
+	border-bottom:1px solid #999;	
+}
+.tin_info .ngay_new{
+	color:#666;
+	margin:0px;
+	padding:0px;
+}
+.tin_info .tin_img{
+	width:140px;
+	height:105px;
+	padding:4px;
+	border:1px solid #CCC;
+	float:left;
+	margin-right:10px;		
+}	
+.tin_info .tin_img img{
+	width:140px;
+	height:105px;
+}
+.tin_info .tin_img:hover{
+	border:1px solid #666;
+}
+.tin_ten{
+	font-size:13px;
+	font-weight:bold;
+	text-decoration:none;
+	margin-bottom:5px;
+	margin-top:5px;
+	color:#FFF;
+	display:block;
+}
+.tin_ten:hover{
+	color:#F00;
+}
+.mota_tin, .mota_tin h2,.mota_tin h3, .mota_tin h4{
+	font-size:12px;
+	font-weight:normal;
+}
+.tin_chitiet{
+	color:#FFF;
+	line-height:15px;
+	width:66px;
+	float:right;		
+	text-decoration:none;
+	position:absolute;
+	bottom:5px;
+	right:5px;	
+}
+.tin_chitiet img{
+	width:5px;
+	height:5px;
+	float:left;
+	border:none;
+	margin-top:5px;
+	margin-right:5px;
+}
+.tin_chitiet:hover{
+	color:#F00;
+}	
+/*END TIN NOI BAT*/
+
+
+/*CHI TIẾT TIN TỨC*/
+#ct_tintuc{
+	font-size:13px;
+}
+#ct_tintuc .image_new{
+	width:300px;
+	border:1px solid #CCCCCC;
+	padding:4px 4px 4px 4px;
+	float:left;
+	margin-right:10px;		
+}	
+#ct_tintuc .tieude_new{
+	color:#000;
+	font-size:16px;
+	font-weight:bold;
+	font-family: 'RobotoCondensedRegular',Tahoma, Geneva, sans-serif;
+	
+}
+#ct_tintuc .ngay_new{
+	color:#666;
+	font-size:13px;
+	margin-top:3px;
+	margin-bottom:7px;
+}
+.mota_new, .mota_new h2, .mota_new h3{
+	font-size:13px;
+	font-weight:bold;
+	padding:0px 5px;
+	text-align:justify;		
+}
+.noidung_new{
+	margin-top:7px;
+	text-align:justify;
+}
+.file_new{
+	padding:10px 0px;
+	color:#FFF;
+	font-style:italic;
+}
+.file_new a{
+	font-weight:bold;
+	color:#FFF;
+}
+.file_new a:hover{
+	text-decoration:underline;
+}
+
+
+a.tinkhac{
+	color:#000;
+	text-decoration:none;
+	font-weight:bold;			
+	padding:6px 0px;
+	display:block;
+	padding-left:10px;
+	background:url(../images/next_tin.png) left 9px no-repeat;
+	font-size:12px;
+}
+a.tinkhac img{
+	width:7px;
+	height:7px;
+	margin-top:13px;
+	margin-right:7px;
+	border:none;
+}
+a.tinkhac:hover{ color:#F00; }
+
+/*END CHI TIẾT TIN TỨC*/
+
+
+/*Phần chung*/
+/*Phần phân trang*/
+.paging{ height:20px; text-align:center; margin:17px 10px 17px 10px; }
+.paging a img{ height:20px; border:none; }
+.paging a:link, .paging a:visited, .paging a:hover, .paging a:active{
+	border:none;
+	color:#0000FF;
+	padding:0px 5px;
+	font-weight:bold;
+	text-decoration:none;
+}
+.padding a{    border: 1px solid #FDB918!important;}
+.paging a:hover , #dangxem{ color:#FF0000; padding:0px 5px; }
+
+
+/* FORM */
+/*
+.button{
+	display:inline-block;
+	cursor:pointer;
+	color: #000;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 10px 14px;
+	border: 1px solid #dadada;
+	background: -moz-linear-gradient(top, white 0%, #f0f0f0 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #f0f0f0));
+	background: -webkit-linear-gradient(top, white 0%, #f0f0f0 100%);
+	background: -o-linear-gradient(top, white 0%, #f0f0f0 100%);
+	background: -ms-linear-gradient(top, white 0%, #f0f0f0 100%);
+	background: linear-gradient(to bottom, #ffffff 0%, #f0f0f0 100%);	
+}
+.button:hover{
+	color:#FFF;
+	background:#000;
+}
+*/
+.text_input{
+	border:1px solid #CCC; font-size:16px; height:39px; line-height:39px; width:60px; padding:0px 10px; float:left; margin-right:10px;
+}
+.btnmorebds,.btnmorebds1{
+	border:1px solid #CCC; background:#F7F7F7; cursor:pointer; height:35px; line-height:35px; width:100%; font-weight:bold;
+}
+.btnmorebds:hover,.btnmorebds1:hover{
+	text-decoration:underline;
+}
+/* END FORM */
+
+
+
+
+/*TIN TỨC Ô*/
+.tin_info_o{
+	width:310px;
+	float:left;
+	margin-right:20px;
+	text-align:center;
+}
+.tin_img_o{
+	width:300px;
+	padding:4px;
+	border:1px solid #DDD;
+	height:210px;
+	float:left;
+	position:relative;
+	overflow:hidden;		
+}
+.tin_img_o img{
+	width:300px;
+	height:210px;
+	float:left;
+}
+.tin_img_o h3,.tin_img_o h4{
+	width:290px;
+	height:200px;
+	background-color:#000000;
+	background-color:rgba(0,0,0,0.7);
+	padding:10px;
+	text-align:center;
+	vertical-align:middle;
+	color:#FFF;
+	font-size:13px;
+	float:left;
+	position:absolute;
+	top:-220px;
+	left:0px;
+	z-index:9;
+}
+.tin_img_o:hover h3,.tin_img_o:hover h4{
+	top:0px;
+}
+
+.tin_ten_o{
+	display:block;
+	padding:8px;
+	color:#000;
+	font-size:13px;	
+}
+.tin_ten_o:hover{
+	color:#F00;
+}
+
+
+
+#lienhe1{width:100%;height:550px;float:left;margin-bottom:50px}
+
+#lienhe2{width:49%;height:550px;float:left}
+#lienhe2 img{width:100%;height:535px}
+#lienhe3{width:49%;height:550px;float:right}
+#lienhe4{width:100%;float:left;height:356px}
+#lienhe5{width:49%;height:356px;float:left}
+#lienhe6{width:49%;float:right;height:356px;}
+.lienhe7{width:100%;float:left;line-height:27px;height:auto;}
+.tieude_lienhe7{width:100%;float:left;font-size:20px;    font-family: 'MyriadPro-Regular';color:#000;font-size:20px;text-transform:uppercase;margin-bottom:7px}
+.noidung_lienhe7{width:100%;float:left}
+.tieude_lienhe7 a{font-size:20px;    font-family: 'MyriadPro-Regular';color:#000;font-size:20px;text-transform:uppercase}
+.tieude_lienhe7 h2{font-size:20px;    font-family: 'MyriadPro-Regular';color:#000;font-size:20px;text-transform:uppercase;font-weight:100}
+
+.tieude_lienhe7 a:hover{text-decoration:underline}
+
+#chitiet_video{width:100%;height:auto;float:left}
+#tenchitiet_video{width:100%;text-align:center;height:27px;line-height:27px;margin-bottom:17px;float:left}
+#noidungtrong{line-height:27px}

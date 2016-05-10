@@ -1,0 +1,90 @@
+
+/* This is the moving lens square underneath the mouse pointer. */
+.cloud-zoom-lens {
+	border: 4px solid #888;
+	margin:-4px;	/* Set this to minus the border thickness. */
+	background-color:#fff;	
+	cursor:move;		
+}
+
+/* This is for the title text. */
+.cloud-zoom-title {
+	font-family:Tahoma, Helvetica, sans-serif;
+	position:absolute !important;
+	background-color:#000;
+	color:#fff;
+	padding:7px 0px;
+	width:100%;
+	text-align:center;	
+	font-weight:bold;
+	font-size:13px;
+	top:0px;
+}
+
+/* This is the zoom window. */
+.cloud-zoom-big {
+	border:5px solid #fff;
+	overflow:hidden;
+	-moz-box-shadow:1px 1px 3px #555;
+	-webkit-box-shadow:1px 1px 3px #555;
+	box-shadow:1px 1px 3px #555;
+}
+
+/* This is the loading message. */
+.cloud-zoom-loading {
+	color:white;	
+	background:#222;
+	padding:3px;
+	border:1px solid #000;
+}
+
+.item{
+	float:left;
+	width:100%;
+	clear:both;
+	margin:0px 0px;
+}
+.thumb_wrapper{
+	width:375px;
+	height:205.5px;
+	position:relative;
+	float:left;
+}
+.thumb_wrapper a.prev,
+.thumb_wrapper a.next{
+	width:30px;
+	height:30px;
+	position:absolute;
+	top:50%;
+	margin-top:-15px;
+	outline:none;
+	cursor:pointer;
+}
+.thumb_wrapper a.prev{
+	left:0px;
+	background:transparent url(../images/fancy_nav_left.png) no-repeat top left;
+}
+.thumb_wrapper a.next{
+	right:0px;
+	background:transparent url(../images/fancy_nav_right.png) no-repeat top left;
+}
+.thumb_wrapper span{
+	display:block;
+	text-align:center;
+	font-size:13px;
+	font-style:italic;
+	margin-top:3px;
+	padding:5px 0px;
+}
+.thumb{
+	margin-left:0px;
+	width:375px;
+	height:205.5px;
+	overflow:hidden;
+	-moz-box-shadow:1px 1px 2px #555;
+	-webkit-box-shadow:1px 1px 2px #555;
+	box-shadow:1px 1px 2px #555;
+	-ms-box-shadow:1px 1px 2px #555;
+	-o-box-shadow:1px 1px 2px #555;
+}
+

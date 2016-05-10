@@ -1,0 +1,81 @@
+/* Thumbnail Effects Style */
+.tj_container{
+	    width: 400px;
+    height: 52px;
+    position: relative;
+    margin-top: 17px;
+}
+.tj_nav{
+	position:absolute;
+	right:0px;
+	top:0px;
+	height:80px;
+	width:29px;
+}
+.tj_nav span{
+	width:20px;
+	height:20px;
+	padding:3px;
+	background:transparent url(../images/prev.png) no-repeat center center;
+	background-size:20px 20px;
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index:999;
+	text-indent:-9000px;
+	border:1px solid #CCC;
+	border-radius:13px; -moz-border-radius:13px; -ms-border-radius:13px; -o-border-radius:13px; -webkit-border-radius:13px;
+	opacity:0.7;
+	cursor:pointer;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition:all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-transition: all 0.2s ease-in-out;
+}
+.tj_nav span.tj_next{
+	background-image:url(../images/next.png);
+	top:auto;
+	bottom:0px;
+	left:0px;
+}
+.tj_nav span:hover{
+	opacity:1.0;
+	border:1px solid #999;
+}
+.tj_wrapper{
+	width:100%;
+	height:100%;
+	position:relative;
+	margin:0px auto;
+}
+.tj_wrapper ul li{
+	float:left;
+	margin-right:4px;
+	border:1px solid #CCC;
+}
+.tj_wrapper ul li.active{
+	border:1px solid #F3E1B8;
+	    padding: 2px;
+}
+.tj_wrapper ul li:hover{
+	border:1px solid #999;
+}
+.tj_wrapper ul li a{
+	outline:none;
+	display:block;
+	background:transparent url(../images/bg_thumb.jpg) no-repeat center center;
+}
+.tj_wrapper ul li img{
+	display:block;
+	border:none !important;
+	float:left;
+	opacity:0.8;		
+}
+.tj_wrapper ul li img:hover{
+	opacity:1.0;
+}
+
+/* Specific style for the examples */
+.example10 .tj_container{
+	height:350px;
+}

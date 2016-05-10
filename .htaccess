@@ -1,0 +1,115 @@
+RewriteEngine On
+
+DirectoryIndex index.php
+
+RewriteCond %{HTTP_HOST} ^www.globalcdi.vn [NC]
+RewriteRule ^(.*)$ http://globalcdi.vn/$1 [L,R=301]
+ErrorDocument 400  http://globalcdi.vn/
+ErrorDocument 401  http://globalcdi.vn/
+ErrorDocument 403  http://globalcdi.vn/
+ErrorDocument 404  http://globalcdi.vn/
+ErrorDocument 500  http://globalcdi.vn/
+
+
+Options -Indexes
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule index.html$ index.php
+
+#ĐĂNG NHẬP - ĐĂNG KÝ
+#RewriteRule ^dang-nhap.html$	index.php?com=dang-nhap&act=login [L]
+#RewriteRule ^thoat.html$	index.php?com=dang-nhap&act=logout [L]
+#RewriteRule ^quen-mat-khau.html$	index.php?com=dang-nhap&act=quen-mat-khau [L]
+#RewriteRule ^thong-tin-ca-nhan.html$	index.php?com=dang-nhap&act=user-info [L]
+#RewriteRule ^doi-mat-khau.html$	index.php?com=dang-nhap&act=doi-mat-khau [L]
+
+
+#SƠ ĐỒ TRANG
+#RewriteRule site-map.xml$ site.php
+#RewriteRule sitemap.xml$ site.php
+
+#ADMIN ---------------------
+RewriteRule ^admin$ admin/index.php?com=user&act=login [L]
+RewriteRule ^admin/$ admin/index.php?com=user&act=login [L]
+
+#TÌM KIẾM SẢN PHẨM--------------------------------------------
+RewriteRule ^tim-kiem/([a-zA-Z0-9_-]+).html$	index.php?com=san-pham&search=$1 [L]
+RewriteRule ^tim-kiem/([a-zA-Z0-9_-]+).html/$	index.php?com=san-pham&search=$1 [L]
+RewriteRule ^tim-kiem/([a-zA-Z0-9_-]+).html/p=([0-9]+)$	index.php?com=san-pham&search=$1&p=$2 [L]
+
+#CHI TIẾT SẢN PHẨM ----------------------------
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-([0-9]+).htm$	index.php?com=$1&id=$3 [L]
+
+#KO CẤP ----------------------------------
+RewriteRule ^([a-zA-Z0-9_-]+).html$	index.php?com=$1 [L]
+RewriteRule ^([a-zA-Z0-9_-]+).html/$	index.php?com=$1 [L]
+RewriteRule ^([a-zA-Z0-9_-]+).html/p=([0-9]+)$	index.php?com=$1&p=$2 [L]
+
+#DANH MỤC CẤP 1 ---------------------------
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-([0-9]+).html$	index.php?com=$1&idc=$3 [L]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-([0-9]+).html/$	index.php?com=$1&idc=$3 [L]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-([0-9]+).html/p=([0-9]+)$	index.php?com=$1&idc=$3&p=$4 [L]
+
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-([0-9]+).htm$	index.php?com=$1&id=$3 [L]
+
+#DANH MỤC CẤP 2 ---------------------------
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-([0-9]+).html$	index.php?com=$1&idi=$4 [L]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-([0-9]+).html/$	index.php?com=$1&idi=$4 [L]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-([0-9]+).html/p=([0-9]+)$	index.php?com=$1&idi=$4&p=$5 [L]
+
+#DANH MỤC CẤP 3 ---------------------------
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-([0-9]+).html$	index.php?com=$1&ide=$5 [L]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-([0-9]+).html/$	index.php?com=$1&ide=$5 [L]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-([0-9]+).html/p=([0-9]+)$	index.php?com=$1&ide=$5&p=$6 [L]
+
+
+
+
+
+###Start Kloxo PHP config Area
+### Please Don't edit these comments or the content in between. kloxo uses this to recognize the lines it writes to the the file. If the above line is corrupted, it may fail to recognize them, leading to multiple lines.
+### begin content - please not remove this line
+
+### MR -- attention
+### 1. Move '#<Ifmodule !mod_php5.c>' until '#</Ifmodule>' on
+###    above '###Start Kloxo PHP config Area'
+### 2. Remove # in front of '#<Ifmodule !mod_php5.c>' and '#</Ifmodule>'
+###    on point (1)
+### 3. Remove # in front of 'AddHandler x-httpd-php52' to activate secondary-php
+###    on point (1)
+### 4. Or Remove # in front of 'AddHandler x-httpd-php' to activate primary-php
+###    on point (1) if select suphp_worker/_event for primary-php
+
+#<Ifmodule !mod_php5.c>
+    #AddHandler x-httpd-php52 .php
+    #AddHandler x-httpd-php .php
+#</Ifmodule>
+
+<Ifmodule mod_php5.c>
+    php_value upload_max_filesize 16M
+    php_value max_execution_time 180
+    php_value max_input_time 180
+    php_value memory_limit 64M
+    php_value post_max_size 32M
+    php_flag register_globals off
+    php_flag display_errors off
+    php_flag file_uploads on
+    php_flag log_errors off
+    php_flag output_buffering off
+    php_flag register_argc_argv on
+    php_flag magic_quotes_gpc off
+    php_flag magic_quotes_runtime off
+    php_flag magic_quotes_sybase off
+    php_flag mysql.allow_persistent off
+    php_flag register_long_arrays on
+    php_flag allow_url_fopen on
+    php_flag cgi.force_redirect on
+    php_flag enable_dl on
+</Ifmodule>
+
+### end content - please not remove this line
+
+###End Kloxo PHP config Area
+
